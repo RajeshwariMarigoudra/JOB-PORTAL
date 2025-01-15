@@ -89,6 +89,7 @@ export const getAllJobs = catchAsyncErrors(async (req, res, next) => {
     success: true,
     jobs,
     count: jobs.length,
+    
   });
 });
 

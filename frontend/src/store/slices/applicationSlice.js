@@ -83,9 +83,13 @@ const applicationSlice = createSlice({
 export const fetchEmployerApplications = () => async (dispatch) => {
   dispatch(applicationSlice.actions.requestForAllApplications());
   try {
+    const token = localStorage.getItem("token"); // Assuming the token is stored in localStorage
     const response = await axios.get(
       `http://localhost:4000/api/v1/application/employer/getall`,
       {
+        headers: {
+          Authorization: `Bearer ${token}`, // Include the token in the headers
+        },
         withCredentials: true,
       }
     );
@@ -98,7 +102,7 @@ export const fetchEmployerApplications = () => async (dispatch) => {
   } catch (error) {
     dispatch(
       applicationSlice.actions.failureForAllApplications(
-        error.response.data.message
+        error.response?.data?.message || "An error occurred"
       )
     );
   }
@@ -122,7 +126,7 @@ export const fetchJobSeekerApplications = () => async (dispatch) => {
   } catch (error) {
     dispatch(
       applicationSlice.actions.failureForMyApplications(
-        error.response.data.message
+        error.response?.data?.message || "An error occurred"
       )
     );
   }
@@ -146,7 +150,7 @@ export const postApplication = (data, jobId) => async (dispatch) => {
   } catch (error) {
     dispatch(
       applicationSlice.actions.failureForPostApplication(
-        error.response.data.message
+        error.response?.data?.message || "An error occurred"
       )
     );
   }
@@ -168,7 +172,7 @@ export const deleteApplication = (id) => async (dispatch) => {
   } catch (error) {
     dispatch(
       applicationSlice.actions.failureForDeleteApplication(
-        error.response.data.message
+        error.response?.data?.message || "An error occurred"
       )
     );
   }
