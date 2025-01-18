@@ -9,8 +9,8 @@ const Navbar = () => {
     <>
       <nav className={show ? "navbar show_navbar" : "navbar"}>
         <div className="logo">
-          <img src="/logo.png" alt="logo" />
-          <h4>NicheNest</h4>
+          {/* <img src="/logo.png" alt="logo" /> */}
+          <h4>GTB</h4>
         </div>
         <div className="links">
           <ul>

@@ -14,14 +14,15 @@ const Footer = () => {
     <>
       <footer>
         <div>
-          <img src="/logo.png" alt="logo" />
+          {/* <img src="/logo.png" alt="logo" /> */}
+          <h4>GTB</h4>
         </div>
         <div>
           <h4>Support</h4>
           <ul>
-            <li>Street No.007 Shahrah-e-Faisal Karachi, Pakistan</li>
-            <li>nichenest@gmail.com</li>
-            <li>+92 3106507521</li>
+            <li>Bangalore, Karnataka, India</li>
+            <li>gtb@gmail.com</li>
+            <li>+91 1234567890</li>
           </ul>
         </div>
 
